@@ -124,30 +124,16 @@
 
     
     &__list 
+        overflow: auto
+        overflow: auto;
+        max-height: 272px;
 
         >li  
             border-bottom: 1px solid #ddd
-            padding: 0 40px 0 0
+      
             position: relative
-            &:before
-                content: ''
-                display: block
-                height 2px
-                width: 14px
-                background: cor[2]
-                position: absolute
-                right 20px
-                top: 24px
-            &:after
-                content: ''
-                display: block
-                height 14px
-                width: 2px
-                background: cor[2]
-                position: absolute
-                right 26px
-                top: 18px
-                transition: all 150ms ease-in-out;
+            
+       
             &.active
                 &:after
                     opacity: 0
@@ -155,6 +141,7 @@
                 max-height: 0
                 overflow: hidden
                 transition: all 150ms ease-in-out;
+                
                 &.active
                     max-height: 99999999px
 
@@ -166,12 +153,38 @@
                 width: 100%
                 color: cor[2]
                 text-decoration: none
+                max-width 200px
        
        
         
 
+.menu-item-has-children
+    position relative
 
+    &:before
+        content: ''
+        display: block
+        height 2px
+        width: 14px
+        background: cor[2]
+        position: absolute
+        right 20px
+        top: 24px
 
+    &:after
+        content: ''
+        display: block
+        height 14px
+        width: 2px
+        background: cor[2]
+        position: absolute
+        right 26px
+        top: 18px
+        transition: all 150ms ease-in-out;
+
+    &.active
+        &:after
+            opacity: 0
 
 
    

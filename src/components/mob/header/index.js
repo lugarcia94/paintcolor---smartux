@@ -23,11 +23,15 @@ $('.header').click(function (e) {
 
 })
 
-$('.menu-item').each(function () {
-    let _this = $(this);
+jQuery('.menu-item-has-children').each(function () {
+    let _this = jQuery(this);
     let _child = _this.find('>.sub-menu')
+
     _this.on('click', function () {
-        _this.toggleClass('active');
-        _child.toggleClass('active');
+        _this.addClass('active');       
+    })
+
+    _child.on('click', function () {
+        _child.addClass('teste__sabes');       
     })
 })
