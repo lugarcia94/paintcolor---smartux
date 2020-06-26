@@ -23,15 +23,18 @@ $('.header').click(function (e) {
 
 })
 
-jQuery('.menu-item-has-children').each(function () {
-    let _this = jQuery(this);
-    let _child = _this.find('>.sub-menu')
+var menuItems = document.querySelectorAll('.menu-item-has-children')
 
-    _this.on('click', function () {
-        _this.addClass('active');       
+if (menuItems) {
+    Array.from(menuItems).forEach((menuItem) => {
+        menuItem.addEventListener('click', (e) => {
+            console.log(menuItem.querySelector('ul.sub-menu > ul'));
+            if (!menuItem.querySelector('ul.sub-menu ul')) {
+                menuItem.classList.toggle('active')
+            }else{
+                menuItem.classList.toggle('active')
+                menuItem.querySelector('ul.sub-menu').classList.toggle('active')
+            }
+        })
     })
-
-    _child.on('click', function () {
-        _child.addClass('teste__sabes');       
-    })
-})
+}
